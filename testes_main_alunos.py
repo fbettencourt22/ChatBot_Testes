@@ -64,20 +64,41 @@ class TestObterResposta(unittest.TestCase):
 
     def teste_ia(self):
         """Teste de respostas sobre inteligência artificial - 3 testes"""
-        self.assertEqual(obter_resposta("ia"), "A inteligência artificial é um campo da ciência da computação que se concentra na criação de sistemas que podem realizar tarefas que normalmente requerem inteligência humana.")
-        self.assertEqual(obter_resposta("machine learning"), "O aprendizado de máquina é um subcampo da inteligência artificial que se concentra no desenvolvimento de algoritmos que permitem que os computadores aprendam com os dados.")
-        self.assertEqual(obter_resposta("deep learning"), "O aprendizado profundo é uma subárea do aprendizado de máquina que utiliza redes neurais profundas para modelar dados complexos.")
+        self.assertEqual(
+            obter_resposta("ia"),
+            "A inteligência artificial é um campo da ciência da computação que se concentra na criação de sistemas que podem realizar tarefas que normalmente requerem inteligência humana.",
+        )
+        self.assertEqual(
+            obter_resposta("machine learning"),
+            "O aprendizado de máquina é um subcampo da inteligência artificial que se concentra no desenvolvimento de algoritmos que permitem que os computadores aprendam com os dados.",
+        )
+        self.assertEqual(
+            obter_resposta("deep learning"),
+            "O aprendizado profundo é uma subárea do aprendizado de máquina que utiliza redes neurais profundas para modelar dados complexos.",
+        )
 
-    def teste_saude(self):
-        """Teste de respostas sobre saúde - 3 testes"""
-        self.assertEqual(obter_resposta("saúde"), "A saúde é um estado de completo bem-estar físico, mental e social, e não apenas a ausência de doenças ou enfermidades.")
-        self.assertEqual(obter_resposta("problemas saúde"), "Problemas de saúde podem variar de leves a graves e podem afetar qualquer parte do corpo.")
+
+def teste_saude(self):
+    """Teste de respostas sobre saúde - 3 testes"""
+    resposta_esperada = "A saúde é um estado de completo bem-estar físico, mental e social, e não apenas a ausência de doenças ou enfermidades."
+    self.assertEqual(obter_resposta("saúde"), resposta_esperada)
+    self.assertEqual(obter_resposta("problemas saúde"), resposta_esperada)
+    self.assertEqual(obter_resposta("prevenção da saúde"), resposta_esperada)
 
     def teste_indisposicao(self):
         """Teste de respostas sobre indisposição - 3 testes"""
-        self.assertEqual(obter_resposta("indisposição"), "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.")
-        self.assertEqual(obter_resposta("sintomas de indisposição"), "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.")
-        self.assertEqual(obter_resposta("estou com sintomas de indisposição"), "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.")
+        self.assertEqual(
+            obter_resposta("indisposição"),
+            "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.",
+        )
+        self.assertEqual(
+            obter_resposta("sintomas de indisposição"),
+            "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.",
+        )
+        self.assertEqual(
+            obter_resposta("estou com sintomas de indisposição"),
+            "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.",
+        )
 
     def teste_horas_e_data(self):
         """Teste de respostas a perguntas sobre horas e data"""
@@ -95,12 +116,23 @@ class TestObterResposta(unittest.TestCase):
         texto_aleatorio1 = "xyz123"
         texto_aleatorio2 = "banana voadora"
         texto_aleatorio3 = "coisa estranha"
-        texto_aleatorio4 = "isto não está previsto",
-            )
-        texto_aleatorio2 = "teste123"  # fazer outro teste de texto aleatório
-        texto_aleatorio3 = "indisposição"  # fazer outro teste de texto aleatório
-        texto_aleatorio4 = (
-            "sintomas de indisposição"  # fazer outro teste de texto aleatório
+        texto_aleatorio4 = "isto não está previsto"
+
+        self.assertEqual(
+            obter_resposta(texto_aleatorio1),
+            f"Desculpa, não entendi a questão! {texto_aleatorio1}",
+        )
+        self.assertEqual(
+            obter_resposta(texto_aleatorio2),
+            f"Desculpa, não entendi a questão! {texto_aleatorio2}",
+        )
+        self.assertEqual(
+            obter_resposta(texto_aleatorio3),
+            f"Desculpa, não entendi a questão! {texto_aleatorio3}",
+        )
+        self.assertEqual(
+            obter_resposta(texto_aleatorio4),
+            f"Desculpa, não entendi a questão! {texto_aleatorio4}",
         )
 
 
